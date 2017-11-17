@@ -56,6 +56,7 @@ plugins=(git tmux virtualenv python pylint auto-pep8 git-flow postgres go golang
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+source $HOME/.profile
 
 export CHROME_DRIVER_PATH=/Users/jbarno/Developement/chromedriver/chromedriver
 # export MANPATH="/usr/local/man:$MANPATH"
