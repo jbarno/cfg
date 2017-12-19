@@ -86,9 +86,12 @@ setopt histignorespace
 # For a full list of active aliases, run `alias`.
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias souce='source'
+alias gs='git status'
 
 #GDC
 alias ptest='python -m pytest -l'
+alias os='openstack server list'
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
