@@ -28,7 +28,7 @@ filetype plugin indent on    " required
 
 
 " tabbing
-set expandtab  	      " tabs to spaces
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " search
 set hlsearch          " highlight search
@@ -53,16 +53,6 @@ set foldlevel=99
 " au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 set encoding=utf-8
-
-"python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
 
 " python syntax highlighting
 let python_highlight_all=1
