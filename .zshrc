@@ -93,6 +93,16 @@ alias gs='git status'
 alias ptest='python -m pytest -l'
 alias os='openstack server list'
 
+# Jimmothy
+cry ()
+{
+    ssh-add -l > /dev/null 2>&1;
+    if [[ $? -eq 1 ]]; then
+        eval $(ssh-agent) > /dev/null 2>&1;
+        ssh-add -K > /dev/null 2>&1;
+    fi
+}
+cry
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
