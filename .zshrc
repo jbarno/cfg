@@ -89,9 +89,16 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias souce='source'
 alias gs='git status'
 
-#GDC
+
+# GDC
 alias ptest='python -m pytest -l'
 alias os='openstack server list'
+
+# Python
+pywhich()
+{
+    python -c "import $1; print $1.__file__;"
+}
 
 # Jimmothy
 cry ()
