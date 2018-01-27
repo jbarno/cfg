@@ -51,7 +51,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux virtualenv python pylint auto-pep8 git-flow postgres go golang)
+plugins=(git tmux python pylint auto-pep8 git-flow postgres go golang)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -79,6 +79,7 @@ export CHROME_DRIVER_PATH=/Users/jbarno/Developement/chromedriver/chromedriver
 
 # goodies
 setopt histignorespace
+bindkey -v
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -100,6 +101,13 @@ pywhich()
     python -c "import $1; print $1.__file__;"
 }
 
+if [ $(command -v  virtualenvwrapper) ]
+then
+    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/Development
+    export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+    source /usr/local/bin/virtualenvwrapper_lazy.sh
+fi
 # Jimmothy
 cry ()
 {
