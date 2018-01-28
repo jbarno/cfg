@@ -35,6 +35,7 @@ set hlsearch          " highlight search
 set ignorecase 	      " case-insensitive matching w/ search
 set incsearch         " incremental highlighting in search
 set smartcase         " case-sensitive w/ capital letter
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>

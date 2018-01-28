@@ -101,13 +101,10 @@ pywhich()
     python -c "import $1; print $1.__file__;"
 }
 
-if [ $(command -v  virtualenvwrapper) ]
-then
-    export WORKON_HOME=$HOME/.virtualenvs
-    export PROJECT_HOME=$HOME/Development
-    export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-    source /usr/local/bin/virtualenvwrapper_lazy.sh
-fi
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Development
+export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper_lazy.sh
 # Jimmothy
 cry ()
 {
