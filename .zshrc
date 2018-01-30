@@ -59,6 +59,7 @@ source $ZSH/oh-my-zsh.sh
 [ -f $HOME/.profile ] && source $HOME/.profile
 
 export CHROME_DRIVER_PATH=/Users/jbarno/Developement/chromedriver/chromedriver
+export PY_DEV_TOOLS=1
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
