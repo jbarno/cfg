@@ -91,6 +91,8 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias souce='source'
 alias gs='git status'
 
+# MAC BS
+alias stop_pg_mac='sudo launchctl stop com.edb.launchd.postgresql-9.4'
 
 # GDC
 alias ptest='python -m pytest -l'
