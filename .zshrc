@@ -58,7 +58,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 [ -f $HOME/.profile ] && source $HOME/.profile
 
-export CHROME_DRIVER_PATH=/Users/jbarno/Developement/chromedriver/chromedriver
+export CHROME_DRIVER_PATH=~/Development/auto-qa/vendors/chromedriver
 export PY_DEV_TOOLS=1
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -97,6 +97,12 @@ alias stop_pg_mac='sudo launchctl stop com.edb.launchd.postgresql-9.4'
 # GDC
 alias ptest='python -m pytest -l'
 alias os='openstack server list'
+
+# start status stop
+vpn()
+{
+    sudo systemctl $1 openvpn@client
+}
 
 # Python
 pywhich()

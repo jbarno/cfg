@@ -1,4 +1,4 @@
 #!/bin/zsh
 # This hook is sourced after a new virtualenv is activated.
 
-[[ -v PY_DEV_TOOLS ]] &&  pip install -r $HOME/.py-dev-tools.txt
+[[ $PY_DEV_TOOLS ]] &&  pip install -r $HOME/.py-dev-tools.txt
