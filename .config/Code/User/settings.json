@@ -1,0 +1,13 @@
+{
+    "window.zoomLevel": 4,
+    "gitlens.keymap": "chorded",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.pyc": true
+    },
+    "files.autoSave": "onWindowChange",
+}
