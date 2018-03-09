@@ -10,4 +10,5 @@
         "**/*.pyc": true
     },
     "files.autoSave": "onWindowChange",
+    "editor.renderWhitespace": "boundary",
 }
