@@ -1,5 +1,5 @@
 {
-    "window.zoomLevel": 4,
+    "window.zoomLevel": 0,
     "gitlens.keymap": "chorded",
     "files.exclude": {
         "**/.git": true,

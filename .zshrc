@@ -95,7 +95,7 @@ alias gs='git status'
 alias stop_pg_mac='sudo launchctl stop com.edb.launchd.postgresql-9.4'
 
 # GDC
-alias ptest='python -m pytest -l'
+alias ptest='python -m pytest '
 alias os='openstack server list'
 
 # start status stop
