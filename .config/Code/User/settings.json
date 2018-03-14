@@ -11,4 +11,5 @@
     },
     "files.autoSave": "onWindowChange",
     "editor.renderWhitespace": "boundary",
+    "gitlens.gitExplorer.files.layout": "auto",
 }
