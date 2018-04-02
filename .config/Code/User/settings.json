@@ -10,6 +10,6 @@
         "**/*.pyc": true
     },
     "files.autoSave": "onWindowChange",
-    "editor.renderWhitespace": "boundary",
+    "editor.renderWhitespace": "all",
     "gitlens.gitExplorer.files.layout": "auto",
 }

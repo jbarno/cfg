@@ -91,6 +91,11 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias souce='source'
 alias gs='git status'
 
+alias tarit='tar -zcvf'
+alias untarit='tar -xvf'
+# Dell BS
+alias net_up='sudo service network-manager stop && sudo service network-manager start'
+
 # MAC BS
 alias stop_pg_mac='sudo launchctl stop com.edb.launchd.postgresql-9.4'
 
