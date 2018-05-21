@@ -119,6 +119,13 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Development
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 source /usr/local/bin/virtualenvwrapper_lazy.sh
+
+#GO
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/Developemnt/go
+
+#KUBE
+alias kc=kubectl
 # Jimmothy
 cry ()
 {
