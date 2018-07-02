@@ -59,6 +59,7 @@ source $ZSH/oh-my-zsh.sh
 [ -f $HOME/.profile ] && source $HOME/.profile
 
 export CHROME_DRIVER_PATH=~/Development/auto-qa/vendors/chromedriver
+
 export PY_DEV_TOOLS=1
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -114,11 +115,12 @@ pywhich()
 {
     python -c "import $1; print $1.__file__;"
 }
+
 export EDITOR=vim
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Development
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-source /usr/local/bin/virtualenvwrapper_lazy.sh
+[[ -x /usr/local/bin/virtualenvwrapper_lazy.sh ]] && source /usr/local/bin/virtualenvwrapper_lazy.sh
 
 #GO
 export PATH=$PATH:/usr/local/go/bin
@@ -126,6 +128,7 @@ export GOPATH=$HOME/Developemnt/go
 
 #KUBE
 alias kc=kubectl
+
 # Jimmothy
 cry ()
 {
@@ -135,7 +138,6 @@ cry ()
         ssh-add -K > /dev/null 2>&1;
     fi
 }
-cry
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
