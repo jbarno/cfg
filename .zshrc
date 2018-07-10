@@ -110,7 +110,7 @@ alias os='openstack server list'
 # start status stop
 vpn()
 {
-    sudo systemctl $1 openvpn@client
+    sudo systemctl $1 openvpn@gdc
 }
 
 # Python
