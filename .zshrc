@@ -106,6 +106,7 @@ alias stop_pg_mac='sudo launchctl stop com.edb.launchd.postgresql-9.4'
 # GDC
 alias ptest='python -m pytest '
 alias os='openstack server list'
+alias ds='dig +short portal.gdc.cancer.gov'
 
 # start status stop
 vpn()
