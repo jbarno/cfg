@@ -115,6 +115,7 @@ vpn()
 }
 
 # Python
+alias ptox='poetry run tox'
 pywhich()
 {
     python -c "import $1; print $1.__file__;"
