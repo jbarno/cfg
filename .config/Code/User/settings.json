@@ -10,7 +10,7 @@
         "**/*.pyc": true
     },
     "files.autoSave": "onWindowChange",
-    "editor.renderWhitespace": "all",
+    "editor.renderWhitespace": "boundary",
     "gitlens.gitExplorer.files.layout": "auto",
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
@@ -23,4 +23,5 @@
         "suppressShowKeyBindingsNotice": true
     },
     "gitlens.historyExplorer.enabled": true,
+    "gitlens.mode.active": "zen",
 }
