@@ -104,7 +104,6 @@ alias net_up='sudo service network-manager stop && sudo service network-manager 
 alias stop_pg_mac='sudo launchctl stop com.edb.launchd.postgresql-9.4'
 
 # GDC
-alias ptest='python -m pytest '
 alias os='openstack server list'
 alias ds='dig +short portal.gdc.cancer.gov'
 
@@ -114,7 +113,10 @@ vpn()
     sudo systemctl $1 openvpn@gdc
 }
 
+
+
 # Python
+alias ptest='python -m pytest '
 alias ptox='poetry run tox'
 pywhich()
 {
