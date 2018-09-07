@@ -22,7 +22,7 @@
 	rv = review
 	st = status
 	ksdiff = difftool -y -t Kaleidoscope
-	delete-merged = branch --merged | grep -v '*' | xargs -n 1 git branch -d
+	delete-merged = !"branch --merged | grep -v '*' | xargs -n 1 git branch -d"
 [branch]
 	autosetuprebase = always
 [color]

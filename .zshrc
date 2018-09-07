@@ -135,6 +135,7 @@ export GOPATH=$HOME/Developemnt/go
 
 #KUBE
 alias kc=kubectl
+alias mk=minikube
 
 # Jimmothy
 cry ()
