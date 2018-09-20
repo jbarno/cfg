@@ -1,2 +1,4 @@
 pipdeptree
 pip-conflict-checker
+pytest-sugar
+pdbpp
