@@ -137,6 +137,15 @@ export GOPATH=$HOME/Developemnt/go
 alias kc=kubectl
 alias mk=minikube
 
+kca()
+{
+    kubectl $1 $2 --all-namespaces
+}
+
+klogs()
+{
+    for container in $(kubectl get pods -n $1 -o name); do echo "------------------------ ${container} -----------------------" | grep -iE "${container}" --color=always; kubectl -n $1 logs ${container} | tail -n 20; done
+}
 # Jimmothy
 cry ()
 {
