@@ -106,7 +106,12 @@ alias stop_pg_mac='sudo launchctl stop com.edb.launchd.postgresql-9.4'
 # GDC
 alias os='openstack server list'
 alias ds='dig +short portal.gdc.cancer.gov'
+alias wtf_auto_qa='salt -G service:auto_qa cmd.run "dig +short portal.gdc.cancer.gov; dig +short api.gdc.cancer.gov; java -version; /var/lib/firefoxdriver/geckodriver --version; google-chrome --version; /var/lib/chromedriver/chromedriver --version"'
 
+kill_boxen()
+{
+    openstack server delete $1 && salt-key -d $1
+}
 # start status stop
 vpn()
 {
