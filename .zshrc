@@ -7,7 +7,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="jbarno"
+ZSH_THEME="spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -54,7 +54,7 @@ fpath+=$HOME/.zfunc
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux python pylint auto-pep8 git-flow postgres go golang)
+plugins=(git tmux python pylint auto-pep8 kubectl kube-ps1 git-flow postgres go golang)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,16 +104,25 @@ alias net_up='sudo service network-manager stop && sudo service network-manager 
 alias stop_pg_mac='sudo launchctl stop com.edb.launchd.postgresql-9.4'
 
 # GDC
-alias ptest='python -m pytest '
 alias os='openstack server list'
+alias ds='dig +short portal.gdc.cancer.gov'
+alias wtf_auto_qa='salt -G service:auto_qa cmd.run "dig +short portal.gdc.cancer.gov; dig +short api.gdc.cancer.gov; java -version; /var/lib/firefoxdriver/geckodriver --version; google-chrome --version; /var/lib/chromedriver/chromedriver --version"'
 
+kill_boxen()
+{
+    openstack server delete $1 && salt-key -d $1
+}
 # start status stop
 vpn()
 {
-    sudo systemctl $1 openvpn@client
+    sudo systemctl $1 openvpn@gdc
 }
 
+
+
 # Python
+alias ptest='python -m pytest '
+alias ptox='poetry run tox'
 pywhich()
 {
     python -c "import $1; print $1.__file__;"
@@ -131,7 +140,17 @@ export GOPATH=$HOME/Developemnt/go
 
 #KUBE
 alias kc=kubectl
+alias mk=minikube
 
+kca()
+{
+    kubectl $1 $2 --all-namespaces
+}
+
+klogs()
+{
+    for container in $(kubectl get pods -n $1 -o name); do echo "------------------------ ${container} -----------------------" | grep -iE "${container}" --color=always; kubectl -n $1 logs ${container} | tail -n 20; done
+}
 # Jimmothy
 cry ()
 {

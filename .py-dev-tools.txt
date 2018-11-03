@@ -1,4 +1,4 @@
 pipdeptree
 pip-conflict-checker
-autopep8
- 
+pytest-sugar
+pdbpp
