@@ -1,11 +1,5 @@
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-echo ".cfg" >> .gitignore
-git clone --bare git@github.com:jbarno/cfg.git $HOME/.cfg
-config status
-config checkout
-config status
-config submodule status
-config submodule init
-config submodule update
-config status
+git clone --bare --depth 1 https://github.com/jbarno/cfg.git $HOME/.cfg
+config reset HEAD --hard
+config submodule update --init --recursive
 config config --local status.showUntrackedFiles no
