@@ -41,4 +41,4 @@
 	changed = green
 	untracked = cyan
 [init]
-	templatedir = /home/jbarno/Development/git-templates
+	templatedir = $HOME/.git-templates

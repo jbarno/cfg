@@ -7,3 +7,6 @@
 [submodule ".pyenv"]
 	path = .pyenv
 	url = https://github.com/pyenv/pyenv.git
+[submodule ".git-templates"]
+	path = .git-templates
+	url = https://github.com/jbarno/git-templates.git
