@@ -1,4 +1,127 @@
+#jbarno
 .cache/
 .mozilla/
 .ssh/
 .cfg/
+
+#vim
+*.swp
+.bash_history
+.history
+
+#logs
+*.log
+*.logs
+*.log.gz
+*.log.tgz
+
+#SSH
+.ssh/
+!*.pub
+id_rsa
+id_dsa
+
+#SSL ( THe *.crt is optional )
+*.key
+*.crt
+*.pem
+
+#GDC related files
+gdc-user-token.*
+
+#BioFiles
+*.bam
+*.bam.gz
+*.bam.bai
+*.bam.*
+*.fastq
+*.fastq.gz
+*.fastq.*
+*.vcf
+*.vcf.gz
+*.vcf.*
+*.maf
+*.maf.gz
+
+#Python
+*.pyc
+
+# flask
+local_settings.py
+
+#OpenStack
+admin_auth
+.novarc
+
+#s3 creds
+.s3cfg
+.aws/
+
+#Taken from Dev teams template
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+.venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# IDEs
+.idea/
+
+# JS
+node_modules/
+gulpfile.js
+package.json
+
+# sqlite
+*.sq3
