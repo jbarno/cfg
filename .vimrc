@@ -17,7 +17,6 @@ Plugin 'Bundle'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic'                                                              
 Plugin 'nvie/vim-flake8'
-Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
@@ -66,10 +65,6 @@ set clipboard=unnamed
 
 "let g:ycm_autoclose_preview_window_after_completion=1
 "map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-" NERDTree Automatic Open with No File Specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " More powerful backspace
 :set backspace=indent,eol,start
