@@ -81,6 +81,9 @@ export PY_DEV_TOOLS=1
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
+#
+# Fedora
+alias signal='2>/dev/null 1>&2 /usr/bin/flatpak run org.signal.Signal/x86_64/stable &'
 
 # goodies
 setopt histignorespace
