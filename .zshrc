@@ -121,6 +121,11 @@ vpn()
 
 
 # Python
+install_pyenv()
+{
+    $HOME/.pyenv-installer/bin/pyenv-installer
+}
+
 alias ptest='python -m pytest '
 alias ptox='poetry run tox'
 pywhich()

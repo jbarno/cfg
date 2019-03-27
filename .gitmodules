@@ -4,9 +4,9 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/jbarno/oh-my-zsh.git
-[submodule ".pyenv"]
-	path = .pyenv
-	url = https://github.com/pyenv/pyenv.git
 [submodule ".git-templates"]
 	path = .git-templates
 	url = https://github.com/jbarno/git-templates.git
+[submodule ".pyenv-installer"]
+	path = .pyenv-installer
+	url = https://github.com/pyenv/pyenv-installer.git
