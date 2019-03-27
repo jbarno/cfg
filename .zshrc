@@ -93,29 +93,22 @@ bindkey -v
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias souce='source'
-alias gs='git status'
 
-alias tarit='tar -zcvf'
-alias untarit='tar -xvf'
-# Dell BS
-alias net_up='sudo service network-manager stop && sudo service network-manager start'
+alias tarit='/usr/bin/tar -zcvf'
+alias untarit='/usr/bin/tar -xvf'
 
-# MAC BS
-alias stop_pg_mac='sudo launchctl stop com.edb.launchd.postgresql-9.4'
-
-# GDC
+# Openstack
 alias os='openstack server list'
-alias ds='dig +short portal.gdc.cancer.gov'
-alias wtf_auto_qa='salt -G service:auto_qa cmd.run "dig +short portal.gdc.cancer.gov; dig +short api.gdc.cancer.gov; java -version; /var/lib/firefoxdriver/geckodriver --version; google-chrome --version; /var/lib/chromedriver/chromedriver --version"'
 
 kill_boxen()
 {
     openstack server delete $1 && salt-key -d $1
 }
+
 # start status stop
 vpn()
 {
-    sudo systemctl $1 openvpn@gdc
+    sudo systemctl $1 openvpn@$2
 }
 
 
@@ -156,6 +149,7 @@ klogs()
 {
     for container in $(kubectl get pods -n $1 -o name); do echo "------------------------ ${container} -----------------------" | grep -iE "${container}" --color=always; kubectl -n $1 logs ${container} | tail -n 20; done
 }
+
 # Jimmothy
 cry ()
 {
