@@ -19,12 +19,11 @@ Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'francoiscabrol/ranger.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-
 
 " tabbing
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
@@ -35,6 +34,9 @@ set ignorecase 	      " case-insensitive matching w/ search
 set incsearch         " incremental highlighting in search
 set smartcase         " case-sensitive w/ capital letter
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" ranger
+let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -73,6 +75,3 @@ set clipboard=unnamed
 syntax enable
 set background=dark
 " colorscheme solarized
-
-
-
