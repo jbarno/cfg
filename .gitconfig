@@ -21,8 +21,10 @@
 	rb = rbranch
 	rv = review
 	st = status
-	ksdiff = difftool -y -t Kaleidoscope
 	delete-merged = !"branch --merged | grep -v '*' | xargs -n 1 git branch -d"
+	stag = "!bash -c 'id=\"`git rev-parse --verify HEAD`\"; tag_name="signed_tag_for_${id:0:8}"; git tag -s "$tag_name" -m \"Tag for commit $id\"; echo \"$tag_name\"'"
+	spush = "!bash -c 'git push origin `git stag`'"
+	vtag = !git tag -v `git describe`
 [branch]
 	autosetuprebase = always
 [color]
@@ -42,3 +44,5 @@
 	untracked = cyan
 [init]
 	templatedir = $HOME/.git-templates
+[gpg]
+	program = gpg2
