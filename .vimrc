@@ -18,7 +18,6 @@ Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic'                                                              
 Plugin 'nvie/vim-flake8'
 Plugin 'tpope/vim-fugitive'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'francoiscabrol/ranger.vim'
 
 " All of your Plugins must be added before the following line
