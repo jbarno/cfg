@@ -1,7 +1,6 @@
 # This is Git's per-user configuration file.
 [user]
 	name = "Justin Barnowski"
-	email = jbarno@uchicago.edu
 [push]
 	default = simple
 [rerere]
@@ -15,10 +14,8 @@
 	ci = commit
 	co = checkout
 	df = diff
-	g = grep -I
 	lg = log -p
 	pp = !"echo 'Pull'; git pull; echo 'Push'; git push"
-	rb = rbranch
 	rv = review
 	st = status
 	delete-merged = !"branch --merged | grep -v '*' | xargs -n 1 git branch -d"

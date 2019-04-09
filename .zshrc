@@ -61,13 +61,12 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 [ -f $HOME/.profile ] && source $HOME/.profile
 
-export CHROME_DRIVER_PATH=~/Development/auto-qa/vendors/chromedriver
 
 export PY_DEV_TOOLS=1
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -88,6 +87,9 @@ alias signal='2>/dev/null 1>&2 /usr/bin/flatpak run org.signal.Signal/x86_64/sta
 # goodies
 setopt histignorespace
 bindkey -v
+
+# Get world info
+alias wthr='/usr/bin/curl wttr.in/Chicago'
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
