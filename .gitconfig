@@ -18,7 +18,7 @@
 	pp = !"echo 'Pull'; git pull; echo 'Push'; git push"
 	rv = review
 	st = status
-	delete-merged = !"branch --merged | grep -v '*' | xargs -n 1 git branch -d"
+	delete-merged = !"git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
 	stag = "!bash -c 'id=\"`git rev-parse --verify HEAD`\"; tag_name="signed_tag_for_${id:0:8}"; git tag -s "$tag_name" -m \"Tag for commit $id\"; echo \"$tag_name\"'"
 	spush = "!bash -c 'git push origin `git stag`'"
 	vtag = !git tag -v `git describe`
