@@ -50,7 +50,7 @@ set foldmethod=indent
 set foldlevel=99
 
 " Enable folding with the spacebar
-" nnoremap <space> za
+nnoremap <space> za
 
 " Flagging Unnecessary Whitespace
 " au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
@@ -66,13 +66,12 @@ set nu
 
 set clipboard=unnamed
 
-"let g:ycm_autoclose_preview_window_after_completion=1
-"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " More powerful backspace
 :set backspace=indent,eol,start
 
 " Enable Solorized Theme
-syntax enable
 set background=dark
 " colorscheme solarized
