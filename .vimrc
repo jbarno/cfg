@@ -75,4 +75,6 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Enable Solorized Theme
 set background=dark
-" colorscheme solarized
+
+" Aliases kinda
+:command PretyJson execute '%!python -m json.tool' | w
