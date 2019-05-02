@@ -1,5 +1,7 @@
+bandit
+flake8
+pdbpp
 pipdeptree
 pip-conflict-checker
-ranger-fm
 pytest-sugar
-pdbpp
+ranger-fm
