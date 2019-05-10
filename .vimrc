@@ -28,7 +28,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " tabbing
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabstop=2 expandtab shiftwidth=2 smarttab autoindent
 
 " search
 set hlsearch          " highlight search
