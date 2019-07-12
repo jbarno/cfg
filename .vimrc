@@ -40,6 +40,9 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " ranger
 let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
 
+" flake8
+let g:flake8_show_in_gutter = 1
+
 "split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
