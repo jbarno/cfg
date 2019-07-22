@@ -54,7 +54,7 @@ set foldlevel=99
 nnoremap <space> za
 
 " Flagging Unnecessary Whitespace
-" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 set encoding=utf-8
 
@@ -71,10 +71,10 @@ let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " More powerful backspace
-:set backspace=indent,eol,start
+set backspace=indent,eol,start
 
-" Enable Solorized Theme
-set background=dark
 
 " Aliases kinda
-:command PretyJson execute '%!python -m json.tool' | w
+command PrettyJson execute '%!python -m json.tool' | w
+
+let g:ycm_python_interpreter_path = '/usr/bin/python'
