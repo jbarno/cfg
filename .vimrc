@@ -12,10 +12,9 @@ Plugin 'gmarik/Vundle.vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 Plugin 'tmhedberg/SimpylFold'
-" Plugin 'vim-scripts/indentpython.vim'
+Plugin 'vim-scripts/indentpython.vim'
 Plugin 'Bundle'
-Plugin 'ervandew/supertab'
-Plugin 'scrooloose/syntastic'                                                              
+Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'tpope/vim-fugitive'
 Plugin 'francoiscabrol/ranger.vim'
@@ -48,7 +47,7 @@ nnoremap <C-H> <C-W><C-H>
 
 " Enable folding
 set foldmethod=indent
-set foldlevel=99
+set foldlevel=120
 
 " Enable folding with the spacebar
 nnoremap <space> za
@@ -57,6 +56,8 @@ nnoremap <space> za
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 set encoding=utf-8
+" Spellcheck
+set spell spelllang=en_us
 
 " python syntax highlighting
 let python_highlight_all=1
