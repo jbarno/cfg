@@ -169,6 +169,12 @@ docucry ()
   eval `ssh-agent -s` && ssh-add
 }
 
+swap()
+{
+  ag -r -l "$1" | xargs -r -d'\n' sed -i "s/"${1}"/"${2}"/g"
+}
+
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
