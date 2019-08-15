@@ -164,6 +164,11 @@ cry ()
         ssh-add -K > /dev/null 2>&1;
     fi
 }
+docucry ()
+{
+  eval `ssh-agent -s` && ssh-add
+}
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
