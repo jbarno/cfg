@@ -41,6 +41,6 @@
 	changed = green
 	untracked = cyan
 [init]
-	templatedir = $HOME/.git-templates
+	templatedir = /home/atlas.cm.com/jbarnowski/.git-templates
 [gpg]
 	program = gpg2
