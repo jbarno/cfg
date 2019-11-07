@@ -22,3 +22,6 @@
 [submodule ".tmux-continuum"]
 	path = .tmux-continuum
 	url = https://github.com/tmux-plugins/tmux-continuum.git
+[submodule ".tmux-current-pane-hostname"]
+	path = .tmux-current-pane-hostname
+	url = https://github.com/soyuka/tmux-current-pane-hostname
