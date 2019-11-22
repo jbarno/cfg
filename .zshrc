@@ -170,6 +170,39 @@ docucry ()
   eval `ssh-agent -s` && ssh-add
 }
 
+tmssh() {
+    if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" = "*tmux*" ]; then
+            tmux rename-window "$(echo $* | cut -d . -f 1)"
+            command ssh "$@"
+    else
+            command ssh "$@"
+    fi
+}
+
+#!/bin/bash
+# for byobu, put this file in ~/.byobu/bin
+# then chmod +x
+# once that's done, every 10 seconds byobu will run this script
+# and rename your windows to either the local host name, or to
+# the host a windows is ssh'd into
+
+rename_windows() {
+for i in $(tmux list-windows -F '#{window_index}'); do {
+
+    panenames=$(tmux list-panes -t $i -F '#{pane_title}' | sed -e 's/:.*$//' -e 's/^.*@//' | uniq)
+    panepids=$(tmux list-panes -t $i -F '#{pane_pid}' | uniq)
+    panecmd=$(ps --ppid $panepids -o cmd= | grep "[s]sh")
+
+    if [[ $panecmd = *"ssh"* ]]; then {
+        windowname=$(echo $panecmd | grep "[s]sh" | cut -d @ -f 2 | sed 's/ssh//g')
+    } else {
+        windowname=$(echo ${panenames} | sed -e 's/ /|/g')
+    }; fi
+    tmux rename-window -t $i $windowname
+}; done
+}
+
+# "code"
 swap()
 {
   ag -r -l "$1" | xargs -r -d'\n' sed -i "s/"${1}"/"${2}"/g"
