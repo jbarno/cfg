@@ -116,7 +116,8 @@ vpn()
     sudo systemctl $1 openvpn@$2
 }
 
-
+# lynx
+alias lynx='/usr/bin/lynx -vikeys -anonymous'
 
 # Python
 install_pyenv()
