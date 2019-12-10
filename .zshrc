@@ -170,6 +170,11 @@ docucry ()
   eval `ssh-agent -s` && ssh-add
 }
 
+fixit ()
+{
+  export SSH_AUTH_SOCK="${HOME}"/.ssh/ssh_auth_sock
+}
+
 tmssh() {
     if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" = "*tmux*" ]; then
             tmux rename-window "$(echo $* | cut -d . -f 1)"
