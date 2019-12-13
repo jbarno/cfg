@@ -167,7 +167,7 @@ cry ()
 }
 docucry ()
 {
-  eval `ssh-agent -s` && ssh-add
+  eval `ssh-agent -s` && ssh-add && source ~/.ssh/rc
 }
 
 fixit ()
