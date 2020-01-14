@@ -213,6 +213,56 @@ swap()
   ag -r -l "$1" | xargs -r -d'\n' sed -i "s/"${1}"/"${2}"/g"
 }
 
+qswap()
+{
+  ag -Q -r -l "$1" | xargs -r -d'\n' sed -i "s/"${1}"/"${2}"/g"
+}
+
+# swanson -- drink and know things
+whats_good()
+{
+  who | cut -d ' ' -f 1 | xargs -t -I user pstree -lah user
+}
+
+masters()
+{
+  tmux new-session -s devm -d -n na11_dev 'ssh master_c_1'
+  tmux new-window -a -n na21_dev 'ssh master_l_1'
+
+  tmux new-session -s labm -d -n na11_lab 'ssh master_c_2'
+  tmux new-window -a -n na21_lab 'ssh master_l_2'
+
+  tmux new-session -s qatm -d -n na11_qat 'ssh master_c_3'
+  tmux new-window -a -n na21_qat 'ssh master_l_3'
+  tmux new-window -a -n eu11_qat 'ssh master_s_3'
+  tmux new-window -a -n eu21_qat 'ssh master_a_3'
+
+  tmux new-session -s qarm -d -n na11_qar 'ssh master_c_4'
+  tmux new-window -a -n na21_qar 'ssh master_l_4'
+
+  tmux new-session -s uatm -d -n na11_uat 'ssh master_c_5'
+  tmux new-window -a -n na21_uat 'ssh master_l_5'
+
+  tmux new-session -s prodm -d -n na11_prod 'ssh master_c_6'
+  tmux new-window -a -n na21_prod 'ssh master_l_6'
+  tmux new-window -a -n eu11_prod 'ssh master_s_6'
+  tmux new-window -a -n eu21_prod 'ssh master_a_6'
+  tmux new-window -a -n us11_prod 'ssh master_g_6'
+  tmux new-window -a -n us12_prod 'ssh master_h_6'
+  tmux new-window -a -n us11dr_prod 'ssh master_g1_6'
+  tmux new-window -a -n us12dr_prod 'ssh master_h1_6'
+
+  tmux new-session -s opsm -d -n na11_ops 'ssh master_c_7'
+  tmux new-window -a -n na21_ops 'ssh master_l_7'
+  tmux new-window -a -n eu11_ops 'ssh master_s_7'
+  tmux new-window -a -n eu21_ops 'ssh master_a_7'
+  tmux new-window -a -n us11_ops 'ssh master_g_7'
+  tmux new-window -a -n us12_ops 'ssh master_h_7'
+
+  tmux new-session -s momm -d -n na11_mom 'ssh master_c_8'
+  tmux new-window -a -n us1_mom 'ssh master_g_8'
+  tmux new-window -a -n us1dr_mom 'ssh master_j_8'
+}
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
