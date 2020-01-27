@@ -207,7 +207,7 @@ for i in $(tmux list-windows -F '#{window_index}'); do {
 }; done
 }
 
-# "code"
+# "metacode"
 swap()
 {
   ag -r -l "$1" | xargs -r -d'\n' sed -i "s/"${1}"/"${2}"/g"
@@ -224,6 +224,7 @@ whats_good()
   who | cut -d ' ' -f 1 | xargs -t -I user pstree -lah user
 }
 
+# docucm
 masters()
 {
   tmux new-session -s devm -d -n na11_dev 'ssh master_c_1'
@@ -262,6 +263,27 @@ masters()
   tmux new-session -s momm -d -n na11_mom 'ssh master_c_8'
   tmux new-window -a -n us1_mom 'ssh master_g_8'
   tmux new-window -a -n us1dr_mom 'ssh master_j_8'
+}
+
+_envFactory()
+{
+  echo "Pulling env:"
+  echo $2
+  tmux new-window -a -n p$2 -c $1/salt_environments/$2 'git pull; /usr/bin/zsh -i'
+}
+
+tmux_psrc()
+{
+  src_base="/home/atlas.cm.com/jbarnowski/Development/git"
+  tmux new-session -s srcp -d -n init -c $src_base
+  _envFactory $src_base dev
+  _envFactory $src_base lab
+  _envFactory $src_base qa
+  _envFactory $src_base qar
+  _envFactory $src_base uat
+  _envFactory $src_base prod
+  _envFactory $src_base ops
+  _envFactory $src_base master_of_masters
 }
 
 # Example aliases
