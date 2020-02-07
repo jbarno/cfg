@@ -265,6 +265,25 @@ masters()
   tmux new-window -a -n us1dr_mom 'ssh master_j_8'
 }
 
+na11_masters()
+{
+  tmux new-session -s na11 -d -n dev 'ssh master_c_1'
+
+  tmux new-window -a -n lab 'ssh master_c_2'
+
+  tmux new-window -a -n qat 'ssh master_c_3'
+
+  tmux new-window -a -n qar 'ssh master_c_4'
+
+  tmux new-window -a -n uat 'ssh master_c_5'
+
+  tmux new-window -a -n prod 'ssh master_c_6'
+
+  tmux new-window -a -n ops 'ssh master_c_7'
+
+  tmux new-window -a -n mom 'ssh master_c_8'
+}
+
 _envFactory()
 {
   echo "Pulling env:"
@@ -275,7 +294,7 @@ _envFactory()
 tmux_psrc()
 {
   src_base="/home/atlas.cm.com/jbarnowski/Development/git"
-  tmux new-session -s srcp -d -n init -c $src_base
+  tmux new-session -s srcp -d -n src -c $src_base
   _envFactory $src_base dev
   _envFactory $src_base lab
   _envFactory $src_base qa
@@ -284,6 +303,16 @@ tmux_psrc()
   _envFactory $src_base prod
   _envFactory $src_base ops
   _envFactory $src_base master_of_masters
+}
+
+start_work()
+{
+  docucry && masters && tmux_psrc
+}
+
+stop_work()
+{
+  pkill ssh-agent && tmux kill-server
 }
 
 # Example aliases
