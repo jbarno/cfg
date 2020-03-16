@@ -258,6 +258,7 @@ masters()
   tmux new-window -a -n eu11_ops 'ssh master_s_7'
   tmux new-window -a -n eu21_ops 'ssh master_a_7'
   tmux new-window -a -n us11_ops 'ssh master_g_7'
+  tmux new-window -a -n us11_ops 'ssh master_j_7'
   tmux new-window -a -n us12_ops 'ssh master_h_7'
 
   tmux new-session -s momm -d -n na11_mom 'ssh master_c_8'
@@ -283,6 +284,24 @@ na11_masters()
 
   tmux new-window -a -n mom 'ssh master_c_8'
 }
+
+na21_masters()
+{
+  tmux new-session -s na21 -d -n dev 'ssh master_l_1'
+
+  tmux new-window -a -n lab 'ssh master_l_2'
+
+  tmux new-window -a -n qat 'ssh master_l_3'
+
+  tmux new-window -a -n qar 'ssh master_l_4'
+}
+#  tmux new-window -a -n uat 'ssh master_l_5'
+#
+#  tmux new-window -a -n prod 'ssh master_l_6'
+#
+#  tmux new-window -a -n ops 'ssh master_l_7'
+#
+#  tmux new-window -a -n mom 'ssh master_l_8'
 
 _envFactory()
 {
@@ -320,6 +339,3 @@ stop_work()
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="/usr/local/sbin:$PATH"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
