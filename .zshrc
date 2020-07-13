@@ -129,7 +129,7 @@ alias ptest='python -m pytest '
 alias ptox='poetry run tox'
 pywhich()
 {
-    python -c "import $1; print $1.__file__;"
+  python -c "import $1; print($1.__file__);"
 }
 
 export EDITOR=vim
@@ -224,6 +224,12 @@ whats_good()
   who | cut -d ' ' -f 1 | xargs -t -I user pstree -lah user
 }
 
+fix_shit()
+{
+  tmux new-session -s fixing -d -n fixing
+  xargs -a ~/fuhkin_yum2.txt -I {} tmux new-window -a 'ssh {}'
+}
+
 # docucm
 masters()
 {
@@ -242,7 +248,7 @@ masters()
   tmux new-window -a -n na21_qar 'ssh master_l_4'
 
   tmux new-session -s uatm -d -n na11_uat 'ssh master_c_5'
-  tmux new-window -a -n na21_uat 'ssh master_l_5'
+  tmux new-window -a -n na11dr_uat 'ssh master_c_52'
 
   tmux new-session -s prodm -d -n na11_prod 'ssh master_c_6'
   tmux new-window -a -n na21_prod 'ssh master_l_6'
