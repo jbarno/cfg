@@ -140,7 +140,7 @@ export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 
 #GO
 export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/Developemnt/go
+export GOPATH=$HOME/Development/go
 
 #KUBE
 alias kc=kubectl
