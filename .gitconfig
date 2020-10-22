@@ -1,6 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
 	name = "Justin Barnowski"
+	email = jbarno@55places.com
 [push]
 	default = simple
 [rerere]
