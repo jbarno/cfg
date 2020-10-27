@@ -54,7 +54,7 @@ fpath+=$HOME/.zfunc
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux python pylint auto-pep8 kubectl kube-ps1 git-flow postgres go golang)
+plugins=(git tmux python pylint kubectl kube-ps1 git-flow postgres golang)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -141,7 +141,7 @@ export GOPATH=$HOME/Development/go
 alias kc=kubectl
 alias mk=minikube
 
-kca()
+kcall()
 {
     kubectl $1 $2 --all-namespaces
 }
