@@ -156,6 +156,16 @@ klogs()
     for container in $(kubectl get pods -n $1 -o name); do echo "------------------------ ${container} -----------------------" | grep -iE "${container}" --color=always; kubectl -n $1 logs ${container} | tail -n 20; done
 }
 
+connect_prod()
+{
+    cd ~/Development/ToolShed/kubernetes && ./cert.sh production && ./kubeconfig.sh production && ./connect.sh production
+}
+
+connect_dev()
+{
+    cd ~/Development/ToolShed/kubernetes && ./cert.sh && ./kubeconfig.sh && ./connect.sh
+}
+
 # Jimmothy
 cry ()
 {
