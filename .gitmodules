@@ -16,3 +16,6 @@
 [submodule ".tmux-resurrect"]
 	path = .tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect
+[submodule ".pyenv_cfg"]
+	path = .pyenv_cfg
+	url = https://github.com/pyenv/pyenv
