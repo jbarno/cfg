@@ -53,7 +53,7 @@ set foldlevel=120
 nnoremap <space> za
 
 " Flagging Unnecessary Whitespace
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 set encoding=utf-8
 " Spellcheck
