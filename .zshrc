@@ -141,6 +141,11 @@ export GOPATH=$HOME/Development/go
 alias kc=kubectl
 alias mk=minikube
 
+alias kn=kubens
+alias kx=kubetx
+
+alias kvalid='kc apply -f . -R --validate --server-dry-run '
+
 kcall()
 {
     kubectl $1 $2 --all-namespaces
@@ -175,6 +180,7 @@ docucry ()
   eval `ssh-agent -s` && ssh-add
 }
 
+# Meta
 swap()
 {
   ag -r -l "$1" | xargs -r -d'\n' sed -i "s/"${1}"/"${2}"/g"
