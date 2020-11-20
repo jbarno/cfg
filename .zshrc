@@ -144,7 +144,9 @@ alias mk=minikube
 alias kn=kubens
 alias kx=kubetx
 
-alias kvalid='kc apply -f . -R --validate --server-dry-run '
+alias kvalid='kubectl apply -f . -R --validate --server-dry-run '
+alias kbadpod='kubectl get pods --all-namespaces --field-selector="status.phase!=Running,status.phase!=Succeeded"'
+alias kbadnode="kubectl get pods --all-namespaces --field-selector='status.phase!=Running,status.phase!=Succeeded' -o json | jq -r '.items[].spec.nodeName' | sort | uniq -c | sort -nr"
 
 kcall()
 {
