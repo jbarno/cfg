@@ -21,6 +21,8 @@ Plugin 'francoiscabrol/ranger.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'saltstack/salt-vim'
 Plugin 'PProvost/vim-ps1'
+Plugin 'google/vim-maktaba'
+Plugin 'bazelbuild/vim-bazel'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
