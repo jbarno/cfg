@@ -39,6 +39,9 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " ranger
 let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
 
+" flake8
+let g:flake8_show_in_gutter = 1
+
 "split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -72,10 +75,10 @@ let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " More powerful backspace
-set backspace=indent,eol,start
+:set backspace=indent,eol,start
 
+" Enable Solorized Theme
+set background=dark
 
 " Aliases kinda
-command PrettyJson execute '%!python -m json.tool' | w
-
-let g:ycm_python_interpreter_path = '/usr/bin/python'
+:command PretyJson execute '%!python -m json.tool' | w

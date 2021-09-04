@@ -129,7 +129,7 @@ alias ptest='python -m pytest '
 alias ptox='poetry run tox'
 pywhich()
 {
-    python -c "import $1; print $1.__file__;"
+  python -c "import $1; print($1.__file__);"
 }
 
 export EDITOR=vim
