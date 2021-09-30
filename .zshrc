@@ -42,7 +42,7 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -54,7 +54,14 @@ fpath+=$HOME/.zfunc
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux python pylint kubectl kube-ps1 git-flow postgres golang)
+plugins=(git
+         tmux
+         kubectl
+         kube-ps1
+         git-flow
+         postgres
+         zsh-autosuggestions
+         )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -165,10 +172,6 @@ cry ()
         ssh-add -K > /dev/null 2>&1;
     fi
 }
-docucry ()
-{
-  eval `ssh-agent -s` && ssh-add
-}
 
 swap()
 {
@@ -180,7 +183,3 @@ swap()
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="/usr/local/sbin:$PATH"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
