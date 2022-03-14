@@ -1,6 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
 	name = "Justin Barnowski"
+	email = jbarno@55places.com
 [push]
 	default = simple
 [rerere]
@@ -19,6 +20,7 @@
 	rv = review
 	st = status
 	delete-merged = !"git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
+	delete-merged-remote = !"git branch --merged | grep -v '*' | xargs -n 1 git push origin --delete"
 	stag = "!bash -c 'id=\"`git rev-parse --verify HEAD`\"; tag_name="signed_tag_for_${id:0:8}"; git tag -s "$tag_name" -m \"Tag for commit $id\"; echo \"$tag_name\"'"
 	spush = "!bash -c 'git push origin `git stag`'"
 	vtag = !git tag -v `git describe`
@@ -40,6 +42,7 @@
 	changed = green
 	untracked = cyan
 [init]
-	templatedir = $HOME/.git-templates
+	templatedir = /Users/jbarno/.git-templates
+	defaultBranch = main
 [gpg]
-	program = gpg2
+	program = /usr/local/bin/gpg

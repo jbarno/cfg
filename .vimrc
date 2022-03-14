@@ -21,6 +21,7 @@ Plugin 'francoiscabrol/ranger.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'saltstack/salt-vim'
 Plugin 'PProvost/vim-ps1'
+Plugin 'stephpy/vim-yaml'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -29,6 +30,7 @@ filetype plugin indent on    " required
 " tabbing
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
+set nofixendofline
 " search
 set hlsearch          " highlight search
 set ignorecase 	      " case-insensitive matching w/ search
@@ -53,11 +55,11 @@ set foldlevel=120
 nnoremap <space> za
 
 " Flagging Unnecessary Whitespace
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 set encoding=utf-8
 " Spellcheck
-set spell spelllang=en_us
+" set spell spelllang=en_us
 
 " python syntax highlighting
 let python_highlight_all=1

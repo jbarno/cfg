@@ -19,6 +19,8 @@ ZSH_THEME="spaceship"
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
 
+ZSH_DISABLE_COMPFIX="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
 
@@ -42,7 +44,7 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -54,7 +56,7 @@ fpath+=$HOME/.zfunc
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux python pylint auto-pep8 kubectl kube-ps1 git-flow postgres go golang)
+plugins=(git tmux zsh-autosuggestions python pylint kubectl terraform git-flow postgres golang)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,10 +87,14 @@ export LANG=en_US.UTF-8
 alias signal='2>/dev/null 1>&2 /usr/bin/flatpak run org.signal.Signal/x86_64/stable &'
 
 # goodies
+# precede your dirty laundry with a space
 setopt histignorespace
+# vim, but the shell
 bindkey -v
+# lurk better
+alias watch='watch '
 
-# Get world info
+# Get weather info TODO
 alias wthr='/usr/bin/curl wttr.in/Chicago'
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -120,11 +126,6 @@ vpn()
 alias lynx='/usr/bin/lynx -vikeys -anonymous'
 
 # Python
-install_pyenv()
-{
-    $HOME/.pyenv-installer/bin/pyenv-installer
-}
-
 alias ptest='python -m pytest '
 alias ptox='poetry run tox'
 pywhich()
@@ -146,7 +147,14 @@ export GOPATH=$HOME/Development/go
 alias kc=kubectl
 alias mk=minikube
 
-kca()
+alias kn=kubens
+alias kx=kubetx
+
+alias kvalid='kubectl apply -f . -R --validate --server-dry-run '
+alias kbadpod='kubectl get pods --all-namespaces --field-selector="status.phase!=Running,status.phase!=Succeeded,status.phase!=Completed"'
+alias kbadnode="kubectl get pods --all-namespaces --field-selector='status.phase!=Running,status.phase!=Succeeded' -o json | jq -r '.items[].spec.nodeName' | sort | uniq -c | sort -nr"
+
+kcall()
 {
     kubectl $1 $2 --all-namespaces
 }
@@ -154,6 +162,16 @@ kca()
 klogs()
 {
     for container in $(kubectl get pods -n $1 -o name); do echo "------------------------ ${container} -----------------------" | grep -iE "${container}" --color=always; kubectl -n $1 logs ${container} | tail -n 20; done
+}
+
+klogall()
+{
+    for container in $(kubectl get pods -n $1 -o name); do echo "------------------------ ${container} -----------------------" | grep -iE "${container}" --color=always; kubectl -n $1 logs --tail=20 --all-containers ${container}; done
+}
+
+kubesys()
+{
+    for container in $(kubectl get pods -n $1 -o name); do echo "------------------------ ${container} -----------------------" | grep -iE "${container}" --color=always; kubectl -n $1 logs --tail=20 --all-containers ${container}; done
 }
 
 # Jimmothy
@@ -170,11 +188,20 @@ docucry ()
   eval `ssh-agent -s` && ssh-add
 }
 
+# Meta
 swap()
 {
-  ag -r -l "$1" | xargs -r -d'\n' sed -i "s/"${1}"/"${2}"/g"
+  set -x
+  ag -r -l --nocolor "${1}" | xargs -r sed -i "s/"${1}"/"${2}"/g"
+  set +x
 }
 
+swapf()
+{
+  set -x
+  find . -type f -exec sed -i.bak  "s/"${1}"/"${2}"/g" {} \;
+  set +x
+}
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
