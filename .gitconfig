@@ -1,45 +1,5 @@
 # This is Git's per-user configuration file.
 [user]
-	name = "Justin Barnowski"
-[push]
-	default = simple
-[rerere]
-	enabled = true
-[pull]
-	rebase = true
-[apply]
-	whitespace = fix
-[alias]
-	br = branch
-	ci = commit
-	co = checkout
-	df = diff
-	lg = log -p
-	pp = !"echo 'Pull'; git pull; echo 'Push'; git push"
-	rv = review
-	st = status
-	delete-merged = !"git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
-	stag = "!bash -c 'id=\"`git rev-parse --verify HEAD`\"; tag_name="signed_tag_for_${id:0:8}"; git tag -s "$tag_name" -m \"Tag for commit $id\"; echo \"$tag_name\"'"
-	spush = "!bash -c 'git push origin `git stag`'"
-	vtag = !git tag -v `git describe`
-[branch]
-	autosetuprebase = always
-[color]
-	ui = auto
-[color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
-[color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-[color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
-[init]
-	templatedir = $HOME/.git-templates
-[gpg]
-	program = gpg2
+# Please adapt and uncomment the following lines:
+	name = Justin Barnowski
+	email = justin.barnowski@flyzipline.com
