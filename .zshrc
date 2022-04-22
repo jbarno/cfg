@@ -177,6 +177,12 @@ swap()
   ag -r -l "$1" | xargs -r -d'\n' sed -i "s/"${1}"/"${2}"/g"
 }
 
+#Zipline
+wave()
+{
+    for x in {1..9}; do echo -n  :wave${x}parrot: ; done
+}
+
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
