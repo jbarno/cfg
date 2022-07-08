@@ -42,6 +42,6 @@
        changed = green
        untracked = cyan
 [init]
-       templatedir = $HOME/.git-templates
+       templatedir = ~/.git-templates
 [gpg]
        program = gpg2

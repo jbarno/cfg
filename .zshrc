@@ -33,6 +33,8 @@ DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
+autoload -Uz compinit
+compinit
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -147,6 +149,14 @@ export GOPATH=$HOME/Development/go
 #KUBE
 alias kc=kubectl
 alias mk=minikube
+alias kn='kubectl config set-context --current --namespace '
+alias kubectx='kubectl config use-context '
+
+# Argo
+alias argopass='kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath={.data.password} | base64 -d; echo'
+alias argoview='kubectl port-forward svc/argocd-server -n argocd 8080:443'
+
+
 
 _kca()
 {
@@ -183,6 +193,7 @@ wave()
     for x in {1..9}; do echo -n  :wave${x}parrot: ; done
 }
 
+alias watch='watch '
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
