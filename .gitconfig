@@ -1,6 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
-	name = "Justin Barnowski"
+	name = Justin Barnowski
+	email = jbarno54@gmail.com
 [push]
 	default = simple
 [rerere]
@@ -40,6 +41,7 @@
 	changed = green
 	untracked = cyan
 [init]
-	templatedir = $HOME/.git-templates
+	templatedir = ~/.git-templates
+	defaultBranch = main
 [gpg]
 	program = gpg2
