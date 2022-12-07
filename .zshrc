@@ -74,29 +74,36 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
+export EDITOR='vim'
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
+#   # would you look at this little injection point, neat
 #   export EDITOR='mvim'
 # fi
 
 # Compilation flags
+# packer is your friend here
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
+# see cry()
+# also why does id_ed25519 become supported but have less bits
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
-#
+
 # Fedora
+# why not a container tho dumb dumb 
+# note the arch is hardcoded
 alias signal='2>/dev/null 1>&2 /usr/bin/flatpak run org.signal.Signal/x86_64/stable &'
 
-# goodies
+# goodies explained
+# hide your keys
 setopt histignorespace
+# vimmy up that shell a bit i.e. esc exits insert mode search and jk scroll
 bindkey -v
 
 # Get world info
-alias wthr='/usr/bin/curl wttr.in/Chicago'
+alias wthr='/usr/bin/curl wttr.in/$HOME_WEATHER'
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -104,6 +111,8 @@ alias wthr='/usr/bin/curl wttr.in/Chicago'
 # For a full list of active aliases, run `alias`.
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+# Please forgive me
 alias souce='source'
 
 alias tarit='/usr/bin/tar -zcvf'
@@ -123,7 +132,7 @@ vpn()
     sudo systemctl $1 openvpn@$2
 }
 
-# lynx
+# lynx a browser vimmy
 alias lynx='/usr/bin/lynx -vikeys -anonymous'
 
 # Python
@@ -134,24 +143,25 @@ install_pyenv()
 
 alias ptest='python -m pytest '
 alias ptox='poetry run tox'
+
+# The best dirtiest way to find wtf 
 pywhich()
 {
   python -c "import $1; print($1.__file__);"
 }
 
-export EDITOR=vim
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Development
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 [[ -x /usr/local/bin/virtualenvwrapper_lazy.sh ]] && source /usr/local/bin/virtualenvwrapper_lazy.sh
 
-#GO
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/Development/go
+# GO keep
+# export PATH=$PATH:/usr/local/go/bin
 
-#KUBE
+# KUBE
 alias kc=kubectl
 alias mk=minikube
+alias ctp=
 
 _kca()
 {
@@ -173,6 +183,8 @@ cry ()
     fi
 }
 
+# Can take some tweaking but script with
+# git updates+ci systems that watch and queue it
 swap()
 {
   ag -r -l "$1" | xargs -r -d'\n' sed -i "s/"${1}"/"${2}"/g"
@@ -182,4 +194,4 @@ swap()
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="/usr/local/sbin:$PATH"
+# export PATH="/usr/local/sbin:$PATH"
