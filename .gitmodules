@@ -1,18 +1,18 @@
 [submodule ".vim/bundle/Vundle.vim"]
 	path = .vim/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim.git
+	url = git@github.com:VundleVim/Vundle.vim.git
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
-	url = https://github.com/jbarno/oh-my-zsh.git
+	url = git@github.com:jbarno/oh-my-zsh.git
 [submodule ".git-templates"]
 	path = .git-templates
-	url = https://github.com/jbarno/git-templates.git
+	url = git@github.com:jbarno/git-templates.git
 [submodule ".pyenv-installer"]
 	path = .pyenv-installer
-	url = https://github.com/pyenv/pyenv-installer.git
+	url = git@github.com:pyenv/pyenv-installer.git
 [submodule ".YouCompleteMe"]
 	path = .YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe
+	url = git@github.com:Valloric/YouCompleteMe
 [submodule ".tmux-resurrect"]
 	path = .tmux-resurrect
-	url = https://github.com/tmux-plugins/tmux-resurrect
+	url = git@github.com:tmux-plugins/tmux-resurrect
