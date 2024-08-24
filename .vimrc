@@ -72,6 +72,7 @@ set nu
 set clipboard=unnamed
 
 let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_show_diagnostics_ui=0
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " More powerful backspace
