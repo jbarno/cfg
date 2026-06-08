@@ -3,7 +3,7 @@
 	url = git@github.com:VundleVim/Vundle.vim.git
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
-	url = git@github.com:jbarno/oh-my-zsh.git
+	url = git@github.com:ohmyzsh/ohmyzsh.git
 [submodule ".git-templates"]
 	path = .git-templates
 	url = git@github.com:jbarno/git-templates.git
